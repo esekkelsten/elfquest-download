@@ -343,7 +343,7 @@ function download { # Arguments: 1: URL with $p for page number
 		cd "$eq - $ka"
 		pwd
 		startVarselSingle $ka
-		download 'http://elfquest.com/read/KA/KA01/ka01-0.jpg' # First cover from the regular issue
+		wget -nv 'http://elfquest.com/read/KA/KA01/ka01-0.jpg' # First cover from the regular issue
 		download 'http://elfquest.com/read/KAC/kac-$p.jpg'
 		sluttVarselSingle $ka
 		cd ../

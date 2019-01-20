@@ -4,12 +4,13 @@
 # erlend.sekkelsten@gmail.com
 # https://github.com/esekkelsten
 
-# Tests if the client has wget installed. Exits if wget isn't found.
+# Set script files location as working directory
+cd "${0%/*}"
 
+# Tests if the client has wget installed. Exits if wget isn't found.
 command -v wget >/dev/null 2>&1 || ( echo "Missing wget. Install wget to use this script."; exit 1; )
 
 # Listing the different Elfquest series
-
 eq="Elfquest" # 21 issues
 sabm="Siege at Blue Mountain" # 8 issues
 kobw="Kings of the Broken Wheel" # 9 issues
@@ -343,7 +344,7 @@ function download { # Arguments: 1: URL with $p for page number
 		cd "$eq - $ka"
 		pwd
 		startVarselSingle "$ka"
-		download 'http://elfquest.com/read/KA/KA01/ka01-0.jpg' # First cover from the regular issue
+		wget -nv 'http://elfquest.com/read/KA/KA01/ka01-0.jpg' # First cover from the regular issue
 		download 'http://elfquest.com/read/KAC/kac-$p.jpg'
 		sluttVarselSingle "$ka"
 		cd ../

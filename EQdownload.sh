@@ -57,7 +57,7 @@ function startVarselSingle { # Arguments= $1: title
 }
 function sluttVarselSingle {
 	printf "\n====================\n"
-	printf "Ferdig med %s." "$1"
+	printf "Ferdig med %s.\n" "$1"
 	date
 	printf "\n====================\n"
 }

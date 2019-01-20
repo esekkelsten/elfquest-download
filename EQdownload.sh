@@ -108,7 +108,7 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "Starter nedlasting av $sabm"
 		mkdir "$eq - $sabm"
 		cd "$eq - $sabm"
-		for i in {1..8}
+		for i in {01..08}
 		do
 			pwd
 			startVarsel $sabm $i
@@ -126,7 +126,7 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "Starter nedlasting av $kobw"
 		mkdir "$eq - $kobw"
 		cd "$eq - $kobw"
-		for i in {1..8}
+		for i in {01..08}
 		do
 			pwd
 			startVarsel $kobw $i
@@ -172,8 +172,8 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "$eq - $hy finnes allerede."
 	else
 		echo "Starter nedlasting av $hy"
-		mkdir "$eq - #hy"
-		cd "$eq - #hy"
+		mkdir "$eq - $hy"
+		cd "$eq - $hy"
 		for i in {01..24}
 		do
 			pwd
@@ -196,8 +196,8 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "$eq - $sh finnes allerede."
 	else
 		echo "Starter nedlasting av $sh"
-		mkdir "$eq - #sh"
-		cd "$eq - #sh"
+		mkdir "$eq - $sh"
+		cd "$eq - $sh"
 		for i in {01..11}
 		do
 			pwd
@@ -250,9 +250,9 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "$eq - $tc finnes allerede."
 	else
 		echo "Starter nedlasting av $tc"
-		mkdir "$eq - #tc"
-		cd "$eq - #tc"
-		for i in {1..20}
+		mkdir "$eq - $tc"
+		cd "$eq - $tc"
+		for i in {01..20}
 		do
 			pwd
 			startVarsel $tc $i
@@ -283,8 +283,8 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "$eq - $nb finnes allerede."
 	else
 		echo "Starter nedlasting av $nb"
-		mkdir "$eq - #nb"
-		cd "$eq - #nb"
+		mkdir "$eq - $nb"
+		cd "$eq - $nb"
 		for i in {01..35}
 		do
 			pwd
@@ -357,7 +357,7 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "Starter nedlasting av $ts"
 		mkdir "$eq - $ts"
 		cd "$eq - $ts"
-		for i in {1..5}
+		for i in {01..05}
 		do
 			pwd
 			startVarsel $ts $i
@@ -390,7 +390,7 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "Starter nedlasting av $jk"
 		mkdir "$eq - $jk"
 		cd "$eq - $jk"
-		for i in {1..12}
+		for i in {01..12}
 		do
 			pwd
 			startVarsel $jk $i
@@ -408,7 +408,7 @@ function download { # Arguments: 1: URL with $p for page number
 		echo "Starter nedlasting av $rb"
 		mkdir "$eq - $rb"
 		cd "$eq - $rb"
-		for i in {1..12}
+		for i in {01..12}
 		do
 			pwd
 			startVarsel $rb $i

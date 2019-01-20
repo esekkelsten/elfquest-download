@@ -1,0 +1,55 @@
+#!/bin/bash
+
+if [[ -n $1 ]]
+	then
+		cd "$1"
+		echo "Renaming and zipping contents in: $(pwd)/$1"
+		curdir="${PWD##*/}"
+	else
+		curdir="${PWD##*/}"
+fi
+# curdir="${PWD##*/}"
+
+
+eqtitles=('eq' 'sabm' 'kobw' 'wr' 'dt' 'hy' 'hyc' 'sh' 'shc' 'sas' 'disc' 'tc' 'iabb' 'nb' 'nbss2' 'wd' 'wh' 'ka' 'ts' 'ts' 'rc' 'jk' 'rb' 'fq' 'fe')
+eq="Elfquest" # 21 issues
+sabm="Siege at Blue Mountain" # 8 issues
+kobw="Kings of the Broken Wheel" # 9 issues
+wr="Wolfrider" # graphic novel
+dt="Dreamtime" #graphic novel
+hy="Hidden Years" # 29 issues
+hyc="Hidden Years Colors" # issues 25-29
+sh="Shards" # 16 issues
+shc="Shards Colors" # issues 12-16
+sas="Searcher and The Sword" # graphic novel
+disc="The Discovery" # graphic novel
+tc="Blood of Ten Chiefs" # 20 issues
+iabb="In All But Blood" # graphic novel
+nb="New Blood" # 35 issues
+nbss2="New Blood Summer Special 2" # Single issue
+wd="Wavedancers" # issue 1, graphic novel, lost chapters
+wh="Wild Hunt" # graphic novel
+ka="Khavi" # Graphic novel in color
+ts="Two-Spear" # 5 issues
+rc="Rogue's Curse" # graphic novel
+jk="Jink" # 12 issues
+rb="The Rebels" # 12 issues
+fq="Future Quest" # graphic novel
+fe="Fire Eye" # graphic novel
+
+# csvfile="../$curdir.csv"
+# touch $csvfile
+
+pgnr=1
+for page in $(ls *.jpg | sort -V)
+do
+	printf -v new "%03d.jpg" "$pgnr"
+	mv -i -- "$page" "$curdir $new"
+	(( pgnr++ ))
+done 
+
+zip "$curdir.cbz" *.jpg
+
+mv "$curdir.cbz" ../
+
+exit 0

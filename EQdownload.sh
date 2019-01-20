@@ -94,7 +94,7 @@ function download { # Arguments: 1: URL with $p for page number
 		do
 			pwd
 			startVarsel $eq $i
-			download 'http://elfquest.com/read/OQ/OQ"$i"/oq"$i"-"$p".jpg'
+			download 'http://elfquest.com/read/OQ/OQ$i/oq$i-$p.jpg'
 			sluttVarsel
 		done
 		cd ../
@@ -112,7 +112,7 @@ function download { # Arguments: 1: URL with $p for page number
 		do
 			pwd
 			startVarsel $sabm $i
-			download 'http://elfquest.com/read/SABM/SABM"$i"/sabm"$i"-"$p".jpg'
+			download 'http://elfquest.com/read/SABM/SABM$i/sabm$i-$p.jpg'
 			sluttVarsel $sabm $i
 		done
 		cd ../
@@ -130,7 +130,7 @@ function download { # Arguments: 1: URL with $p for page number
 		do
 			pwd
 			startVarsel $kobw $i
-			download 'http://elfquest.com/read/KOBW/KOBW0"$i"/kobw0"$i"-"$p".jpg'
+			download 'http://elfquest.com/read/KOBW/KOBW0$i/kobw0$i-$p.jpg'
 			sluttVarsel $kobw $i
 		done
 		cd ../
@@ -146,7 +146,7 @@ function download { # Arguments: 1: URL with $p for page number
 		cd "$eq - $wr"
 		pwd
 		startVarselSingle $wr
-		download 'http://elfquest.com/read/WR/awr-"$i".jpg'
+		download 'http://elfquest.com/read/WR/awr-$p.jpg'
 		sluttVarselSingle $wr
 		cd ../
 		pwd
@@ -161,7 +161,7 @@ function download { # Arguments: 1: URL with $p for page number
 		cd "$eq - $dt"
 		pwd
 		startVarselSingle $dt
-		download 'http://elfquest.com/read/DTC/dtc-"$i".jpg'
+		download 'http://elfquest.com/read/DTC/dtc-$p.jpg'
 		sluttVarselSingle $dt
 		cd ../
 		pwd

@@ -47,7 +47,7 @@ function sluttVarsel {
 	printf "\n====================\n"
 	printf "Ferdig med %s nummer %s.\n" "$1" "$2"
 	date
-	printf "\n====================\n"
+	printf "====================\n\n"
 }
 function startVarselSingle { # Arguments= $1: title
 	printf "\n====================\n"
@@ -93,7 +93,7 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..21} # Issues to download
 		do
 			pwd
-			startVarsel $eq $i
+			startVarsel "$eq" "$i"
 			download 'http://elfquest.com/read/OQ/OQ$i/oq$i-$p.jpg'
 			sluttVarsel
 		done
@@ -111,9 +111,9 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..08}
 		do
 			pwd
-			startVarsel $sabm $i
+			startVarsel "$sabm" "$i"
 			download 'http://elfquest.com/read/SABM/SABM$i/sabm$i-$p.jpg'
-			sluttVarsel $sabm $i
+			sluttVarsel "$sabm" "$i"
 		done
 		cd ../
 		pwd
@@ -129,9 +129,9 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..08}
 		do
 			pwd
-			startVarsel $kobw $i
+			startVarsel "$kobw" "$i"
 			download 'http://elfquest.com/read/KOBW/KOBW0$i/kobw0$i-$p.jpg'
-			sluttVarsel $kobw $i
+			sluttVarsel "$kobw" "$i"
 		done
 		cd ../
 		pwd
@@ -145,9 +145,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $wr"
 		cd "$eq - $wr"
 		pwd
-		startVarselSingle $wr
+		startVarselSingle "$wr"
 		download 'http://elfquest.com/read/WR/awr-$p.jpg'
-		sluttVarselSingle $wr
+		sluttVarselSingle "$wr"
 		cd ../
 		pwd
 	fi
@@ -160,9 +160,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $dt"
 		cd "$eq - $dt"
 		pwd
-		startVarselSingle $dt
+		startVarselSingle "$dt"
 		download 'http://elfquest.com/read/DTC/dtc-$p.jpg'
-		sluttVarselSingle $dt
+		sluttVarselSingle "$dt"
 		cd ../
 		pwd
 	fi
@@ -177,16 +177,16 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..24}
 		do
 			pwd
-			startVarsel $hy $i
+			startVarsel "$hy" "$i"
 			download 'http://elfquest.com/read/HY/HY$i/hy$i-$p.jpg'
-			sluttVarsel $hy $i
+			sluttVarsel "$hy" "$i"
 		done
 		echo "Starter nedlasting av $hyc"
 		# Hidden Years Colors
 		pwd
-		startVarselSingle $hyc
+		startVarselSingle "$hyc"
 		download 'http://elfquest.com/read/HYC/hyc-$p.jpg'
-		sluttVarselSingle $hyc
+		sluttVarselSingle "$hyc"
 		cd ../
 		pwd
 	fi
@@ -201,16 +201,16 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..11}
 		do
 			pwd
-			startVarsel $sh $i
+			startVarsel "$sh" "$i"
 			download 'http://elfquest.com/read/SH/SH$i/sh$i-$p.jpg'
-			sluttVarsel $sh $i
+			sluttVarsel "$sh" "$i"
 		done
 		echo "Starter nedlasting av $shc"
 		# Hidden Years Colors
 		pwd
-		startVarselSingle $shc
+		startVarselSingle "$shc"
 		download 'http://elfquest.com/read/SHC/shc-$p.jpg'
-		sluttVarselSingle $shc
+		sluttVarselSingle "$shc"
 		cd ../
 		pwd
 	fi
@@ -223,9 +223,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $sas"
 		cd "$eq - $sas"
 		pwd
-		startVarselSingle $sas
+		startVarselSingle "$sas"
 		download 'http://elfquest.com/read/SAS/sas-$p.jpg'
-		sluttVarselSingle $sas
+		sluttVarselSingle "$sas"
 		cd ../
 		pwd
 	fi
@@ -238,9 +238,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $disc"
 		cd "$eq - $disc"
 		pwd
-		startVarselSingle $disc
+		startVarselSingle "$disc"
 		download 'http://elfquest.com/read/DISC/disc-$p.jpg'
-		sluttVarselSingle $disc
+		sluttVarselSingle "$disc"
 		cd ../
 		pwd
 	fi
@@ -255,9 +255,9 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..20}
 		do
 			pwd
-			startVarsel $tc $i
+			startVarsel "$tc" "$i"
 			download 'http://elfquest.com/read/TC/TC$i/tc$i-$p.jpg'
-			sluttVarsel $tc $i
+			sluttVarsel "$tc" "$i"
 		done
 		cd ../
 		pwd
@@ -271,9 +271,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $iabb"
 		cd "$eq - $iabb"
 		pwd
-		startVarselSingle $iabb
+		startVarselSingle "$iabb"
 		download 'http://elfquest.com/read/IABB/iabb-$p.jpg'
-		sluttVarselSingle $iabb
+		sluttVarselSingle "$iabb"
 		cd ../
 		pwd
 	fi
@@ -288,16 +288,16 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..35}
 		do
 			pwd
-			startVarsel $nb $i
+			startVarsel "$nb" "$i"
 			download 'http://elfquest.com/read/NB/NB$i/nb$i-$p.jpg'
-			sluttVarsel $nb $i
+			sluttVarsel "$nb" "$i"
 		done
 		echo "Starter nedlasting av $nbss2"
 		# New Blood Summer Special 2
 		pwd
-		startVarselSingle $nbss2
+		startVarselSingle "$nbss2"
 		download 'http://elfquest.com/read/NB/NBSS2/nbss2-$p.jpg'
-		sluttVarselSingle $nbss2
+		sluttVarselSingle "$nbss2"
 		cd ../
 		pwd
 	fi
@@ -310,11 +310,11 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $wd"
 		cd "$eq - $wd"
 		pwd
-		startVarselSingle $wd
+		startVarselSingle "$wd"
 		download 'http://elfquest.com/read/WD/WD01/wd1-$p.jpg'
 		download 'http://elfquest.com/read/WDa/awd-$p.jpg'
 		download 'http://elfquest.com/read/WDX/wdx-$p.jpg'
-		sluttVarselSingle $wd
+		sluttVarselSingle "$wd"
 		cd ../
 		pwd
 	fi
@@ -327,9 +327,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $wh"
 		cd "$eq - $wh"
 		pwd
-		startVarselSingle $wh
+		startVarselSingle "$wh"
 		download 'http://elfquest.com/read/WH/awh-$p.jpg'
-		sluttVarselSingle $wh
+		sluttVarselSingle "$wh"
 		cd ../
 		pwd
 	fi
@@ -342,10 +342,10 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $ka"
 		cd "$eq - $ka"
 		pwd
-		startVarselSingle $ka
+		startVarselSingle "$ka"
 		download 'http://elfquest.com/read/KA/KA01/ka01-0.jpg' # First cover from the regular issue
 		download 'http://elfquest.com/read/KAC/kac-$p.jpg'
-		sluttVarselSingle $ka
+		sluttVarselSingle "$ka"
 		cd ../
 		pwd
 	fi
@@ -360,9 +360,9 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..05}
 		do
 			pwd
-			startVarsel $ts $i
+			startVarsel "$ts" "$i"
 			download 'http://elfquest.com/read/TS/TS$i/ts$i-$p.jpg'
-			sluttVarsel $ts $i
+			sluttVarsel "$ts" "$i"
 		done
 		cd ../
 		pwd
@@ -376,9 +376,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $rc"
 		cd "$eq - $rc"
 		pwd
-		startVarselSingle $rc
+		startVarselSingle "$rc"
 		download 'http://elfquest.com/read/RC/arc-$p.jpg'
-		sluttVarselSingle $rc
+		sluttVarselSingle "$rc"
 		cd ../
 		pwd
 	fi
@@ -393,9 +393,9 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..12}
 		do
 			pwd
-			startVarsel $jk $i
+			startVarsel "$jk" "$i"
 			download 'http://elfquest.com/read/JK/JK$i/jk$i-$p.jpg'
-			sluttVarsel $jk $i
+			sluttVarsel "$jk" "$i"
 		done
 		cd ../
 		pwd
@@ -411,9 +411,9 @@ function download { # Arguments: 1: URL with $p for page number
 		for i in {01..12}
 		do
 			pwd
-			startVarsel $rb $i
+			startVarsel "$rb" "$i"
 			download 'http://elfquest.com/read/RB/RB$i/rb$i-$p.jpg'
-			sluttVarsel $rb $i
+			sluttVarsel "$rb" "$i"
 		done
 		cd ../
 		pwd
@@ -427,9 +427,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $fq"
 		cd "$eq - $fq"
 		pwd
-		startVarselSingle $fq
+		startVarselSingle "$fq"
 		download 'http://elfquest.com/read/FQ/afq-$p.jpg'
-		sluttVarselSingle $fq
+		sluttVarselSingle "$fq"
 		cd ../
 		pwd
 	fi
@@ -442,9 +442,9 @@ function download { # Arguments: 1: URL with $p for page number
 		mkdir "$eq - $fe"
 		cd "$eq - $fe"
 		pwd
-		startVarselSingle $fe
+		startVarselSingle "$fe"
 		download 'http://elfquest.com/read/FE/afe-$p.jpg'
-		sluttVarselSingle $fe
+		sluttVarselSingle "$fe"
 		cd ../
 		pwd
 	fi

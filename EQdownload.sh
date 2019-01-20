@@ -264,16 +264,16 @@ function download { # Arguments: 1: URL with $p for page number
 	fi
 
 # In All But Blood
-	if [[ -d "$eq - $aibb" ]]; then
-		echo "$eq - $aibb finnes allerede."
+	if [[ -d "$eq - $iabb" ]]; then
+		echo "$eq - $iabb finnes allerede."
 	else
 		echo "Starter nedlasting av $aibb"
-		mkdir "$eq - $aibb"
-		cd "$eq - $aibb"
+		mkdir "$eq - $iabb"
+		cd "$eq - $iabb"
 		pwd
-		startVarselSingle $aibb
+		startVarselSingle $iabb
 		download 'http://elfquest.com/read/IABB/iabb-$p.jpg'
-		sluttVarselSingle $aibb
+		sluttVarselSingle $iabb
 		cd ../
 		pwd
 	fi
